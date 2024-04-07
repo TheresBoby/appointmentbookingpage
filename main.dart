@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'timeslotpg.dart';
 
 void main() {
   runApp(MyApp());
@@ -115,11 +116,14 @@ class _DoctorCardState extends State<DoctorCard> {
           ),
           SizedBox(height: 16.0),
           ElevatedButton(
-            onPressed: () {
-              // Handle appointment booking
-            },
-            child: Text('Appointment'),
-          ),
+  onPressed: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => TimeSlotPage()),
+    );
+  },
+  child: const Text('Book Appointment'),
+),
         ],
       ),
     );
