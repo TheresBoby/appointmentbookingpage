@@ -117,12 +117,14 @@ class _DoctorCardState extends State<DoctorCard> {
           SizedBox(height: 16.0),
       ElevatedButton(
   onPressed: () {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => TimeSlotPage(selectedDate: _focusedDay),
-      ),
-    );
+    if (_selectedDay != null) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => TimeSlotPage(selectedDate: _selectedDay!),
+        ),
+      );
+    }
   },
   child: const Text('Book Appointment'),
 ),
@@ -131,3 +133,4 @@ class _DoctorCardState extends State<DoctorCard> {
     );
   }
 }
+
